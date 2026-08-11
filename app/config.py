@@ -10,8 +10,8 @@ class Settings(BaseSettings):
     # Default values are provided here, but they can be overridden by environment variables or a .env file.
     DB_HOST: str = "db"
     DB_PORT: int = 3306
-    DB_USER: str
-    DB_PASSWORD: str
+    DB_USER: str = "test_user"
+    DB_PASSWORD: str = "test_password"
     DB_NAME: str = "shortener_db"
     BASE_URL: str = "http://localhost:8000"
 
