@@ -152,6 +152,14 @@ curl -X POST http://localhost:8000/shorten \
 
 ---
 
+## 🛡️ AWS IAM — Least Privilege for ECS Deploy
+
+For the CD pipeline, create a dedicated AWS IAM user instead of using root or admin credentials. Grant it access to ECS only — following the least privilege principle keeps the security risk minimal even if the key ever leaks.
+
+Generate that user's security credentials (Access Key ID + Secret Access Key) and add them to the GitHub repo as `AWS_ACCESS_KEY` and `AWS_SECRET_KEY` secrets — `cd.yml` already picks these up for the ECS deploy step.
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -172,5 +180,3 @@ curl -X POST http://localhost:8000/shorten \
 ├── docker-compose.yml     # local dev stack
 └── Dockerfile
 ```
-
----
