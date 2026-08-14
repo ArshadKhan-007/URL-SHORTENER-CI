@@ -1,0 +1,26 @@
+{
+  "family": "url-shortener-task",
+  "containerDefinitions": [
+    {
+      "name": "url-shortener",
+      "image": "arshadkhan007/url-shortener:latest",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "name": "url-shortener-port",
+          "containerPort": 8000,
+          "hostPort": 8000,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "cpu": "256",
+  "memory": "512"
+}
